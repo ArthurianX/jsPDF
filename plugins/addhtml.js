@@ -55,7 +55,7 @@
 			var h = dim.h || 0;
 			var w = dim.w || Math.min(W,obj.width/K) - x;
 
-			var format = 'PNG';
+			var format = 'JPEG';
 			if(options.format)
 				format = options.format;
 
