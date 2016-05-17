@@ -95,6 +95,7 @@
 		}.bind(this);
 
 		if(typeof html2canvas !== 'undefined' && !options.rstz) {
+			console.log('html2canvas_', element, options);
 			return html2canvas(element, options);
 		}
 
