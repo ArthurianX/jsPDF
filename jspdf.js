@@ -948,6 +948,7 @@ var jsPDF = (function (global) {
                 var datauri = ('' + type).substr(0, 6) === 'dataur'
                     ? 'data:application/pdf;base64,' + btoa(buildDocument()) : 0;
 
+                console.log(type, options);
                 switch (type) {
                     case undefined:
                         return buildDocument();

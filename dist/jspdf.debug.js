@@ -14,8 +14,8 @@
 
     /** @preserve
      * jsPDF - PDF Document creation from JavaScript
-     * Version 1.2.61 Built on 2016-05-17T15:13:21.444Z
-     *                           CommitID f75b85861e
+     * Version 1.2.61 Built on 2016-05-17T15:19:29.585Z
+     *                           CommitID 44f6a4823d
      *
      * Copyright (c) 2010-2014 James Hall <james@parall.ax>, https://github.com/MrRio/jsPDF
      *               2010 Aaron Spike, https://github.com/acspike
@@ -942,6 +942,7 @@
             _output = SAFE(function (type, options) {
                 var datauri = ('' + type).substr(0, 6) === 'dataur' ? 'data:application/pdf;base64,' + btoa(buildDocument()) : 0;
 
+                console.log(type, options);
                 switch (type) {
                     case undefined:
                         return buildDocument();
@@ -2011,7 +2012,7 @@
          * pdfdoc.mymethod() // <- !!!!!!
          */
         jsPDF.API = { events: [] };
-        jsPDF.version = "1.2.61 2016-05-17T15:13:21.444Z:arthur";
+        jsPDF.version = "1.2.61 2016-05-17T15:19:29.585Z:arthur";
 
         if (typeof define === 'function' && define.amd) {
             define('jsPDF', function () {
@@ -3757,7 +3758,6 @@ Q\n";
     		}.bind(this);
 
     		if (typeof html2canvas !== 'undefined' && !options.rstz) {
-    			console.log('html2canvas_', element, options);
     			return html2canvas(element, options);
     		}
 
