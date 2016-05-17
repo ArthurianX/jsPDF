@@ -55,7 +55,7 @@
 			var h = dim.h || 0;
 			var w = dim.w || Math.min(W,obj.width/K) - x;
 
-			var format = 'JPEG';
+			var format = 'PNG';
 			if(options.format)
 				format = options.format;
 
@@ -95,6 +95,7 @@
 		}.bind(this);
 
 		if(typeof html2canvas !== 'undefined' && !options.rstz) {
+			console.log(html2canvas(element, options));
 			return html2canvas(element, options);
 		}
 
