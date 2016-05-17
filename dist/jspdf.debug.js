@@ -14,8 +14,8 @@
 
     /** @preserve
      * jsPDF - PDF Document creation from JavaScript
-     * Version 1.2.61 Built on 2016-05-17T15:55:44.103Z
-     *                           CommitID a0a87d2f77
+     * Version 1.2.61 Built on 2016-05-17T16:07:05.214Z
+     *                           CommitID 8304d71804
      *
      * Copyright (c) 2010-2014 James Hall <james@parall.ax>, https://github.com/MrRio/jsPDF
      *               2010 Aaron Spike, https://github.com/acspike
@@ -924,6 +924,7 @@
                 }return ab;
             },
                 getBlob = function getBlob() {
+                console.log('getBLob');
                 return new Blob([getArrayBuffer()], { type: "application/pdf" });
             },
 
@@ -942,16 +943,19 @@
             _output = SAFE(function (type, options) {
                 var datauri = ('' + type).substr(0, 6) === 'dataur' ? 'data:application/pdf;base64,' + btoa(buildDocument()) : 0;
 
-                console.log(type, options);
                 switch (type) {
                     case undefined:
+                        console.log('undefined');
                         return buildDocument();
                     case 'save':
+                        console.log('save');
                         if (navigator.getUserMedia) {
                             if (global.URL === undefined || global.URL.createObjectURL === undefined) {
+                                console.log('return blob in new page');
                                 return API.output('dataurlnewwindow');
                             }
                         }
+                        console.log('save blob');
                         saveAs(getBlob(), options);
                         if (typeof saveAs.unload === 'function') {
                             if (global.setTimeout) {
@@ -2012,7 +2016,7 @@
          * pdfdoc.mymethod() // <- !!!!!!
          */
         jsPDF.API = { events: [] };
-        jsPDF.version = "1.2.61 2016-05-17T15:55:44.103Z:arthur";
+        jsPDF.version = "1.2.61 2016-05-17T16:07:05.214Z:arthur";
 
         if (typeof define === 'function' && define.amd) {
             define('jsPDF', function () {
@@ -3758,7 +3762,6 @@ Q\n";
     		}.bind(this);
 
     		if (typeof html2canvas !== 'undefined' && !options.rstz) {
-    			console.log(html2canvas(element, options));
     			return html2canvas(element, options);
     		}
 
