@@ -19,6 +19,7 @@
   "dependencies": {
     "adler32cs": "github:chick307/adler32cs.js",
     "cf-blob.js": "0.0.1",
+    "es6-promise": "^3.2.1",
     "filesaver.js": "github:andyinabox/FileSaver.js"
   },
   "devDependencies": {

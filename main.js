@@ -21,6 +21,7 @@ import './plugins/total_pages';
 import './node_modules/cf-blob.js/Blob.js';
 import './node_modules/filesaver.js/FileSaver.js';
 import './node_modules/adler32cs/adler32cs.js';
+import './node_modules/es6-promise/dist/es6-promise.js';
 import './libs/css_colors.js';
 import './libs/deflate.js';
 import './libs/html2canvas/dist/html2canvas.js';
