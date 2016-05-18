@@ -930,7 +930,6 @@ var jsPDF = (function (global) {
                 return ab;
             },
             getBlob = function () {
-                console.log('getBLob');
                 return new Blob([getArrayBuffer()], {type: "application/pdf"});
             },
             /**
@@ -951,18 +950,14 @@ var jsPDF = (function (global) {
 
                 switch (type) {
                     case undefined:
-                        console.log('undefined');
                         return buildDocument();
                     case 'save':
-                        console.log('save');
                         if (navigator.getUserMedia) {
                             if (global.URL === undefined
                                 || global.URL.createObjectURL === undefined) {
-                                  console.log('return blob in new page');
                                 return API.output('dataurlnewwindow');
                             }
                         }
-                        console.log('save blob');
                         saveAs(getBlob(), options);
                         if (typeof saveAs.unload === 'function') {
                             if (global.setTimeout) {
